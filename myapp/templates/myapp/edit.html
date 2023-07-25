@@ -1,0 +1,32 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+<form class="shadow-lg m-10 rounded-lg" method='post'>{% csrf_token %}
+    <div class="form-container px-10 py-10 flex ">
+      <div>
+        <div class="mt-4">
+          <label class="font-bold text-grey-500">Expense Name</label>
+        </div>
+        <div class="border p-1">
+          {{expense_form.name}}
+        </div>
+  
+        <div class="mt-4">
+          <label class="font-bold text-grey-500">Amount</label>
+        </div>
+        <div class="border p-1">
+          {{expense_form.amount}}
+        </div>
+  
+        <div class="mt-4">
+          <label class="font-bold text-grey-500">Category</label>
+        </div>
+        <div class="border p-1">
+          {{expense_form.category}}
+        </div>
+        <div class="mt-4">
+          <button class="bg-green-500 px-5 py-2 text-white font-bold rounded" type="submit">Edit Data</button>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock body %}
